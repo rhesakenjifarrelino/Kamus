@@ -35,7 +35,7 @@ async def ya(ctx):
    
 @bot.command()
 async def guess(ctx):
-    await ctx.send('Guess a number between 1 and 10.')
+    await ctx.send('Guess a number between 1 and 13.')
 
 @bot.command()
 async def answer(ctx,n):
