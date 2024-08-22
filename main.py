@@ -39,7 +39,7 @@ async def guess(ctx):
 
 @bot.command()
 async def answer(ctx,n):
-    if n == random.randint(1,10):
+    if n == random.randint(1,13):
         await ctx.send('Good Job!')
     else:
         await ctx.send('Try Again!')
