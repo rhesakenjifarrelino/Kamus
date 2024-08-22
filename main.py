@@ -19,15 +19,29 @@ async def hello(ctx):
 async def heh(ctx, count_heh = 5):
     await ctx.send("he" * count_heh)
 
-acak = random.randint(1,20)
-acak1 = random.randint(1,20)
 @bot.command()
-async def give(ctx):
-    await ctx.send('I will give you star')
-    await ctx.send('answer this question')
-    await ctx.send(acak)
-    await ctx.send("+")
-    await ctx.send(acak1)
+async def bestfriend(ctx):
+    question ='Do you want to be my friend?'
+    await ctx.send(question)
 
+@bot.command()
+async def yes(ctx):
+    await ctx.send('Really?')
+    await ctx.send('You want to be friends with a bot?')
+
+@bot.command()
+async def ya(ctx):
+    await ctx.send('thank you for being my friend') 
+   
+@bot.command()
+async def guess(ctx):
+    await ctx.send('Guess a number between 1 and 10.')
+
+@bot.command()
+async def answer(ctx,n):
+    if n == random.randint(1,10):
+        await ctx.send('Good Job!')
+    else:
+        await ctx.send('Try Again!')
 
 bot.run("Token Anda")
