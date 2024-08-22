@@ -1,18 +1,33 @@
-meme_dict = {
-            "CRINGE": "Sesuatu yang sangat aneh atau memalukan",
-            "LOL": "Tanggapan umum terhadap sesuatu yang lucu",
-            "ROFL" : "tanggapan terhadap lelucon",
-            "SHEESH" : "sedikit ketidaksetujuan",
-            "CREEPY" : "menakutkan, tidak menyenangkan",
-            "AGGRO" : "untuk menjadi agresif/marah"
-            }
+import discord
+import random
+from discord.ext import commands
 
-word = input("Ketik kata yang tidak Kamu mengerti (gunakan huruf kapital semua!): ")   
+intents = discord.Intents.default()
+intents.message_content = True
 
-if word in meme_dict.keys():
-    print(meme_dict[word])
-    
-    # Apa yang harus kita lakukan jika kata itu ditemukan?
-else:
-    print("Kata tidak ditemukan!")
-    # Apa yang harus kita lakukan jika kata itu tidak ditemukan?
+bot = commands.Bot(command_prefix='$', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'We have logged in as {bot.user}')
+
+@bot.command()
+async def hello(ctx):
+    await ctx.send(f'Hi! I am a bot {bot.user}!')
+
+@bot.command()
+async def heh(ctx, count_heh = 5):
+    await ctx.send("he" * count_heh)
+
+acak = random.randint(1,20)
+acak1 = random.randint(1,20)
+@bot.command()
+async def give(ctx):
+    await ctx.send('I will give you star')
+    await ctx.send('answer this question')
+    await ctx.send(acak)
+    await ctx.send("+")
+    await ctx.send(acak1)
+
+
+bot.run("Token Anda")
