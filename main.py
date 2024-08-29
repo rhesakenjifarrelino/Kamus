@@ -30,4 +30,10 @@ async def answer(ctx, n = random.randint(1,7)):
     else:
         await ctx.send('Skill Issue')
 
+@bot.group(hidden=True)
+async def secret(ctx: commands.Context):
+    """What is this "secret" you speak of?"""
+    if ctx.invoked_subcommand is None:
+        await ctx.send('There is no secret in this code yet', delete_after=5)
+
 bot.run("Token Anda")
