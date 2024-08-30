@@ -65,7 +65,7 @@ def get_duck_image_url():
     return data['url']
 
 
-@bot.command('duck')
+@bot.command('get_duck')
 async def get_duck(ctx):
     '''Setelah kita memanggil perintah bebek (duck), program akan memanggil fungsi get_duck_image_url'''
     image_url = get_duck_image_url()
