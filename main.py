@@ -57,6 +57,14 @@ async def random_meme(ctx):
    # Kita kemudian dapat mengirim file ini sebagai tolok ukur!
     await ctx.send(file=picture)
 
+@bot.command()
+async def get_tokusatsu(ctx):
+    images = os.listdir('tokusatsu')
+    with open('tokusatsu/'+random.choice(images), 'rb') as f:
+        # Mari simpan file perpustakaan/library Discord yang dikonversi dalam variabel ini!
+        picture = discord.File(f)
+   # Kita kemudian dapat mengirim file ini sebagai tolok ukur!
+    await ctx.send(file=picture)    
 
 def get_duck_image_url():    
     url = 'https://random-d.uk/api/random'
